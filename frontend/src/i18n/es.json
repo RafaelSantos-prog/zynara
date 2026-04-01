@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "pricing": "Planes",
+    "chat": "Chat",
+    "dashboard": "Panel",
+    "login": "Entrar",
+    "logout": "Salir"
+  },
+  "auth": {
+    "title": "Acompañamiento digital con presencia ética",
+    "subtitle": "Apoyo emocional centrado en la escucha, la seguridad y la continuidad.",
+    "googleButton": "Entrar con Google",
+    "signupTitle": "Crear cuenta nueva",
+    "signupSubtitle": "Únete a Zynara para comenzar tu acompañamiento digital.",
+    "conventional": "Convencional",
+    "google": "Google",
+    "name": "Nombre",
+    "fullName": "Nombre completo",
+    "username": "Nombre de usuario",
+    "birthDate": "Fecha de nacimiento",
+    "day": "Día",
+    "month": "Mes",
+    "year": "Año",
+    "email": "Correo",
+    "password": "Contraseña",
+    "createAccount": "Crear cuenta",
+    "signIn": "Entrar",
+    "switchToLogin": "Ya tengo cuenta",
+    "switchToRegister": "Crear cuenta nueva",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "orContinue": "O continúa con",
+    "disclaimer": "Esta plataforma no sustituye el acompañamiento psicológico profesional.",
+    "localHint": "Usa nombre, correo y contraseña para crear tu cuenta convencional.",
+    "loginHint": "Inicia sesión con tu correo o cuenta de Google.",
+    "registerHint": "Completa los datos de abajo para crear tu perfil.",
+    "loading": "Validando tu acceso..."
+  },
+  "onboarding": {
+    "question1": "¿Cómo te has sentido últimamente?",
+    "question2": "¿Qué te trajo hasta aquí?",
+    "question3": "¿Hay algo específico en lo que te gustaría trabajar?",
+    "skip": "Saltar",
+    "next": "Continuar"
+  },
+  "chat": {
+    "placeholder": "Escribe con calma lo que te está pasando...",
+    "newSession": "Nueva sesión",
+    "send": "Enviar",
+    "typing": "Zynara está escribiendo...",
+    "emptyState": "Elige una sesión o crea una nueva para empezar.",
+    "deleteSession": "Eliminar",
+    "deleteSessionConfirm": "¿Seguro que quieres eliminar este historial? Esta acción no se puede deshacer.",
+    "deleteSessionAria": "Eliminar historial de {{title}}"
+  },
+  "pricing": {
+    "free": "Gratis",
+    "pro": "Pro",
+    "subscribe": "Suscribirme a Pro",
+    "freeDescription": "3 sesiones por mes, onboarding e historial básico.",
+    "proDescription": "Sesiones ilimitadas, área profesional y reportes para psicólogos."
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Algo no salió como se esperaba."
+  }
+}

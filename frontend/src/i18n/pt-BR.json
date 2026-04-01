@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "home": "Início",
+    "pricing": "Planos",
+    "chat": "Chat",
+    "dashboard": "Painel",
+    "login": "Entrar",
+    "logout": "Sair"
+  },
+  "auth": {
+    "title": "Acolhimento digital com presença ética",
+    "subtitle": "Suporte emocional com foco em escuta, segurança e continuidade.",
+    "googleButton": "Entrar com Google",
+    "signupTitle": "Criar nova conta",
+    "signupSubtitle": "Junte-se a Zynara para começar seu acolhimento digital.",
+    "conventional": "Convencional",
+    "google": "Google",
+    "name": "Nome",
+    "fullName": "Nome completo",
+    "username": "Nome de usuário",
+    "birthDate": "Data de nascimento",
+    "day": "Dia",
+    "month": "Mês",
+    "year": "Ano",
+    "email": "E-mail",
+    "password": "Senha",
+    "createAccount": "Criar conta",
+    "signIn": "Entrar",
+    "switchToLogin": "Já tenho conta",
+    "switchToRegister": "Criar nova conta",
+    "forgotPassword": "Esqueceu a senha?",
+    "orContinue": "Ou continue com",
+    "disclaimer": "Esta plataforma nao substitui acompanhamento psicologico profissional.",
+    "localHint": "Use nome, e-mail e senha para criar sua conta convencional.",
+    "loginHint": "Entre com seu e-mail ou a conta Google.",
+    "registerHint": "Preencha os dados abaixo para criar seu perfil.",
+    "loading": "Validando sua entrada..."
+  },
+  "onboarding": {
+    "question1": "Como voce esta se sentindo ultimamente?",
+    "question2": "O que te trouxe ate aqui?",
+    "question3": "Ha algo especifico que gostaria de trabalhar?",
+    "skip": "Pular",
+    "next": "Continuar"
+  },
+  "chat": {
+    "placeholder": "Escreva com calma o que está pegando...",
+    "newSession": "Nova sessão",
+    "send": "Enviar",
+    "typing": "Zynara está digitando...",
+    "emptyState": "Escolha uma sessão ou crie uma nova para começar.",
+    "deleteSession": "Excluir",
+    "deleteSessionConfirm": "Tem certeza que deseja excluir este histórico? Esta ação não pode ser desfeita.",
+    "deleteSessionAria": "Excluir histórico de {{title}}"
+  },
+  "pricing": {
+    "free": "Gratuito",
+    "pro": "Pro",
+    "subscribe": "Assinar Pro",
+    "freeDescription": "3 sessões por mês, onboarding e histórico básico.",
+    "proDescription": "Sessões ilimitadas, área profissional e relatórios para psicólogos."
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Algo não saiu como esperado."
+  }
+}

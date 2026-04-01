@@ -1,0 +1,14 @@
+node_modules
+dist
+build
+.vite
+.turbo
+.cache
+.DS_Store
+*.log
+.env
+frontend/.env
+backend/.env
+backend/prisma/dev.db
+backend/prisma/dev.db-journal
+

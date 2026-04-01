@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "home": "Home",
+    "pricing": "Pricing",
+    "chat": "Chat",
+    "dashboard": "Dashboard",
+    "login": "Sign in",
+    "logout": "Sign out"
+  },
+  "auth": {
+    "title": "Digital support with ethical presence",
+    "subtitle": "Emotional support focused on listening, safety, and continuity.",
+    "googleButton": "Continue with Google",
+    "signupTitle": "Create new account",
+    "signupSubtitle": "Join Zynara to start your digital support journey.",
+    "conventional": "Conventional",
+    "google": "Google",
+    "name": "Name",
+    "fullName": "Full name",
+    "username": "Username",
+    "birthDate": "Birth date",
+    "day": "Day",
+    "month": "Month",
+    "year": "Year",
+    "email": "Email",
+    "password": "Password",
+    "createAccount": "Create account",
+    "signIn": "Sign in",
+    "switchToLogin": "I already have an account",
+    "switchToRegister": "Create new account",
+    "forgotPassword": "Forgot password?",
+    "orContinue": "Or continue with",
+    "disclaimer": "This platform does not replace professional psychological care.",
+    "localHint": "Use name, email, and password to create your conventional account.",
+    "loginHint": "Sign in with your email or Google account.",
+    "registerHint": "Fill in the details below to create your profile.",
+    "loading": "Validating your access..."
+  },
+  "onboarding": {
+    "question1": "How have you been feeling lately?",
+    "question2": "What brought you here?",
+    "question3": "Is there something specific you want to work on?",
+    "skip": "Skip",
+    "next": "Continue"
+  },
+  "chat": {
+    "placeholder": "Write at your own pace about what is going on...",
+    "newSession": "New session",
+    "send": "Send",
+    "typing": "Zynara is typing...",
+    "emptyState": "Pick a session or create a new one to begin.",
+    "deleteSession": "Delete",
+    "deleteSessionConfirm": "Are you sure you want to delete this history? This action cannot be undone.",
+    "deleteSessionAria": "Delete history for {{title}}"
+  },
+  "pricing": {
+    "free": "Free",
+    "pro": "Pro",
+    "subscribe": "Subscribe to Pro",
+    "freeDescription": "3 sessions per month, onboarding, and basic history.",
+    "proDescription": "Unlimited sessions, professional area, and reports for psychologists."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something did not go as expected."
+  }
+}
