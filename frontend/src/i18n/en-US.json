@@ -3,7 +3,7 @@
     "home": "Home",
     "pricing": "Pricing",
     "chat": "Chat",
-    "dashboard": "Dashboard",
+    "about": "About",
     "login": "Sign in",
     "logout": "Sign out"
   },
@@ -51,7 +51,11 @@
     "emptyState": "Pick a session or create a new one to begin.",
     "deleteSession": "Delete",
     "deleteSessionConfirm": "Are you sure you want to delete this history? This action cannot be undone.",
-    "deleteSessionAria": "Delete history for {{title}}"
+    "deleteSessionAria": "Delete history for {{title}}",
+    "guestBanner": "Guest mode: up to {{limit}} user messages per conversation. Sign in for saved history and unlimited sessions.",
+    "guestRemaining": "{{remaining}} / {{limit}} messages remaining in guest mode.",
+    "guestLoginCta": "Sign in",
+    "guestLimitReached": "Guest mode limit reached. Create a free account to continue."
   },
   "pricing": {
     "free": "Free",

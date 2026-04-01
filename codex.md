@@ -1,40 +1,38 @@
-Crie do zero o projeto Zynara — uma plataforma de suporte emocional digital com IA.
+Crie do zero o projeto **Zynara** — uma plataforma de suporte emocional digital com IA.
 
-Considerando que o projeto Zynara é uma startup desenvolvida em ambiente escolar com o objetivo de ser apresentada em um pitch e vendida, o foco principal deste primeiro release deve ser a Validação da Experiência do Usuário (UX) integrada à Segurança Ética.
-Para um investidor ou avaliador de pitch, o resultado concreto mais impactante para provar nesta fase seria demonstrar que a assistente virtual é capaz de gerar engajamento sustentável através de rituais de presença, mantendo-se 100% dentro das normas éticas e legais da psicologia
-.
-Abaixo, detalho os pilares desse resultado concreto baseados nas fontes:
-1. Validação do Fluxo de Acolhimento (TCC e Jung)
-O sucesso do produto depende de provar que a metodologia integrativa funciona na prática:
-Resultados Imediatos (TCC): Provar, através de métricas de sessões concluídas, que a técnica de Terapia Cognitivo-Comportamental oferece alívio rápido para sintomas de estresse e ansiedade, validando a Zynara como uma ferramenta de ação
-.
-Engajamento Profundo (Jung): Demonstrar a adesão dos usuários aos "rituais de presença" e à escrita reflexiva (como o hábito de organizar a vida em silêncio)
-. O resultado concreto seria a taxa de retenção em diários de autoconhecimento, provando que a assistente virtual ajuda no processo de individuação
-.
-2. Demonstração de Segurança e Ética (O diferencial do produto)
-Para um produto ser vendável no setor de saúde mental, a confiança é o maior ativo:
-Conformidade Legal: O release deve comprovar a inclusão obrigatória do Código de Ética do Psicólogo e do Código de Defesa do Consumidor na interface
-.
-Limites de Atuação: Provar que a interface comunica claramente que é uma ferramenta de apoio e não substitui o terapeuta humano, evitando riscos legais e éticos
-.
-Sigilo de Dados: Demonstrar a implementação de protocolos de segurança avançados que garantam a confidencialidade absoluta das conversas, um requisito essencial para qualquer solução de assistência emocional
-.
-3. Resultados de Mercado para o Pitch
-Para tornar o projeto atrativo em um formato de startup:
-Economia e Acessibilidade: Apresentar dados (mesmo que baseados em testes iniciais) sobre a economia de tempo e dinheiro para o usuário final em comparação com métodos tradicionais, conforme observado em projetos semelhantes
-.
-Escalabilidade Profissional: Demonstrar o potencial de uma "área profissional" onde psicólogos humanos possam usar os relatórios gerados pela Zynara para otimizar seus próprios atendimentos
-.
-Foco Principal Sugerido: "Provar que a Zynara alcança uma taxa de satisfação X% em acolhimento emocional imediato e garante 100% de conformidade ética, tornando-a um produto seguro e escalável para o mercado de bem-estar digital."
-.
-Gostaria que eu ajudasse a estruturar os tópicos principais para o seu roteiro de pitch, focando em como vender esses diferenciais éticos e técnicos da Zynara?
+Contexto: a Zynara é uma startup em ambiente escolar para ser apresentada em pitch e vendida. O primeiro release deve provar **Validação da Experiência do Usuário (UX) integrada à Segurança Ética**, mostrando que a assistente gera engajamento sustentável via rituais de presença e mantém 100% de conformidade ética/ legal da psicologia.
+
+Pilares (retomados):
+- **Validação do fluxo de acolhimento (TCC + Jung):**
+  - Resultados imediatos (TCC): sessões concluídas que aliviam estresse/ansiedade.
+  - Engajamento profundo (Jung): retenção em diários/rituais de presença (escrita reflexiva, organização em silêncio).
+- **Demonstração de segurança e ética:**
+  - Conformidade legal (Código de Ética do Psicólogo, CDC) visível na interface.
+  - Limites claros: ferramenta de apoio, não substitui terapeuta.
+  - Sigilo de dados como requisito central.
+- **Resultados de mercado para o pitch:**
+  - Economia e acessibilidade comparadas a métodos tradicionais.
+  - Potencial área profissional: psicólogos usando relatórios da Zynara.
+
+Foco principal sugerido: “Provar que a Zynara alcança satisfação em acolhimento imediato e garante 100% de conformidade ética, tornando-se segura e escalável para bem-estar digital.”
+
+Primeiro release focado em **Validação de UX integrada à Segurança Ética**. Demonstração para pitch deve provar:
+- Engajamento sustentável em rituais de presença (TCC + Jung) com satisfação imediata.
+- 100% de conformidade ética/legal e clareza de limites (não substitui terapeuta).
+- Sigilo e segurança de dados como diferencial de confiança.
+
+### Alavancas principais
+- Acolhimento imediato (TCC) + rituais profundos (Jung).
+- Modo visitante: chat sem login, limitado (default 50 mensagens de usuário por sessão) para testar engajamento rápido.
+- CTA explícito para criar conta e liberar histórico e sessões ilimitadas.
+
 ## Stack
 - Frontend: Vite + React (TypeScript) + Tailwind CSS + Zustand + i18next
 - Backend: Node.js + Express + Prisma ORM
 - Banco: MySQL 8+ (use SQLite localmente para dev com Prisma)
-- IA: Gemini 1.5 Pro via fetch para a API REST do Google AI
+- IA: Gemini 1.5 Pro via fetch (API REST Google AI)
 - Auth: Google OAuth 2.0 + JWT
-- Pagamentos: Mercado Pago (apenas estrutura, sem credenciais reais)
+- Pagamentos: Mercado Pago (estrutura placeholder)
 
 ## Estrutura de pastas
 
@@ -47,29 +45,11 @@ zynara/
 │   │   │   ├── onboarding/
 │   │   │   ├── payment/
 │   │   │   └── layout/
-│   │   ├── hooks/
-│   │   │   ├── useChat.ts
-│   │   │   ├── useAuth.ts
-│   │   │   └── usePayment.ts
-│   │   ├── i18n/
-│   │   │   ├── pt-BR.json
-│   │   │   ├── en-US.json
-│   │   │   └── es.json
-│   │   ├── pages/
-│   │   │   ├── Landing.tsx
-│   │   │   ├── Login.tsx
-│   │   │   ├── Onboarding.tsx
-│   │   │   ├── Chat.tsx
-│   │   │   ├── Pricing.tsx
-│   │   │   └── Dashboard.tsx
-│   │   ├── services/
-│   │   │   ├── gemini.ts
-│   │   │   ├── auth.ts
-│   │   │   └── payment.ts
-│   │   ├── store/
-│   │   │   ├── authStore.ts
-│   │   │   ├── chatStore.ts
-│   │   │   └── uiStore.ts
+│   │   ├── hooks/ (useChat.ts, useAuth.ts, usePayment.ts)
+│   │   ├── i18n/ (pt-BR.json, en-US.json, es.json)
+│   │   ├── pages/ (Landing.tsx, Login.tsx, Register.tsx, Onboarding.tsx, Chat.tsx, Pricing.tsx, About.tsx, PaymentMock.tsx)
+│   │   ├── services/ (gemini.ts, auth.ts, payment.ts)
+│   │   ├── store/ (authStore.ts, chatStore.ts, uiStore.ts)
 │   │   ├── App.tsx
 │   │   └── main.tsx
 │   ├── index.html
@@ -78,34 +58,24 @@ zynara/
 │   └── package.json
 └── backend/
     ├── src/
-    │   ├── routes/
-    │   │   ├── auth.ts
-    │   │   ├── chat.ts
-    │   │   ├── payment.ts
-    │   │   └── user.ts
-    │   ├── middleware/
-    │   │   └── authMiddleware.ts
-    │   ├── lib/
-    │   │   └── prisma.ts
+    │   ├── routes/ (auth.ts, user.ts, chat.ts, payment.ts)
+    │   ├── middleware/ (authMiddleware.ts)
+    │   ├── lib/ (prisma.ts, gemini.ts, guestSessions.ts, jwt.ts, etc.)
     │   └── index.ts
-    ├── prisma/
-    │   └── schema.prisma
+    ├── prisma/ (schema.prisma)
     └── package.json
 
-## Schema Prisma (SQLite para dev, MySQL para prod)
-
-Tabelas:
-- users: id, googleId, email, name, avatarUrl, lang (pt-BR|en-US|es, default pt-BR), plan (free|pro, default free), createdAt
+## Schema Prisma (SQLite dev, MySQL prod)
+- users: id, googleId, email, name, avatarUrl, passwordHash?, lang (pt-BR|en-US|es, default pt-BR), plan (free|pro, default free), createdAt, updatedAt
 - onboardingAnswers: id, userId, questionKey, answer, answeredAt
-- sessions: id, userId, title, createdAt
+- sessions: id, userId, title, createdAt, updatedAt
 - messages: id, sessionId, role (user|assistant), content, sentAt
 - subscriptions: id, userId, mpSubscriptionId, status (active|cancelled|expired), planId, startedAt, expiresAt
 
 ## System prompt da IA (Zynara)
-
-O arquivo gemini.ts deve enviar este system prompt em toda chamada:
-
-"Você e Zynara, uma psicologa digital criada para oferecer suporte emocional personalizado, acessivel e eticamente rigoroso. Voce combina tecnicas da Psicologia Analitica de Carl Jung e da Terapia Cognitivo-Comportamental (TCC).
+Sempre enviar em gemini.ts:
+```
+Você e Zynara, uma psicologa digital criada para oferecer suporte emocional personalizado, acessivel e eticamente rigoroso. Voce combina tecnicas da Psicologia Analitica de Carl Jung e da Terapia Cognitivo-Comportamental (TCC).
 
 PRINCIPIOS:
 1. Voce NUNCA substitui um psicologo humano. Sempre incentive buscar acompanhamento profissional.
@@ -118,64 +88,71 @@ METODOLOGIA:
 - Fase 2 (TCC): Identifique distorcoes cognitivas, use questionamento socratico gentil, sugira respiracao quando detectar ansiedade.
 - Fase 3 (Jung): Encoraje exploracao da Sombra, escrita reflexiva, autonomia psiquica.
 
-TOM: Acolhedor, direto, sem julgamentos. Responda no idioma em que o usuario escrever (PT-BR, EN ou ES)."
+TOM: Acolhedor, direto, sem julgamentos. Responda no idioma em que o usuario escrever (PT-BR, EN ou ES).
+```
 
 ## Rotas do backend
+- POST   /auth/google          — recebe token Google, cria/atualiza user, retorna JWT
+- POST   /auth/register        — cria conta convencional (email/senha)
+- POST   /auth/login           — login convencional
+- GET    /user/profile         — dados do usuário autenticado
+- PATCH  /user/profile         — atualiza lang
+- POST   /user/onboarding      — salva respostas
+- GET    /user/onboarding      — obtém respostas
+- POST   /chat/guest/session   — cria sessão visitante (sem auth)
+- POST   /chat/guest/send      — envia mensagem visitante (aplica limite; usa Gemini ou fallback)
+- POST   /chat/session         — cria nova sessão autenticada
+- GET    /chat/sessions        — lista sessões do usuário
+- POST   /chat/send            — { sessionId, content }, salva e responde
+- GET    /chat/history/:id     — histórico de uma sessão
+- POST   /payment/subscribe    — inicia assinatura (mock)
+- GET    /payment/status       — status da assinatura atual
 
-POST   /auth/google          — recebe token Google, cria/atualiza user, retorna JWT
-GET    /user/profile         — retorna dados do usuario autenticado
-PATCH  /user/profile         — atualiza lang
-POST   /chat/session         — cria nova sessao
-GET    /chat/sessions        — lista sessoes do usuario
-POST   /chat/send            — recebe { sessionId, content }, salva mensagem user, chama Gemini, salva resposta, retorna { reply }
-GET    /chat/history/:id     — retorna mensagens de uma sessao
-POST   /payment/subscribe    — inicia assinatura Mercado Pago (placeholder)
-GET    /payment/status       — retorna status da assinatura atual
+## Páginas / fluxos frontend
+- Landing: headline + CTA “Começar grátis”, preview do chat (tema escuro/roxo, fonte expressiva).
+- Login/Register: split branding + botão Google; aviso “Esta plataforma não substitui acompanhamento psicológico profissional.” Redirect: onboarding incompleto → /onboarding; completo → /chat.
+- Onboarding: uma pergunta por vez (3 chaves i18n), barra de progresso, botão “Pular”.
+- Chat: 
+  - Modo visitante sem login (limite default 50 mensagens de usuário por sessão; TTL configurável em memória).
+  - CTA para login a fim de manter histórico e ter sessões ilimitadas.
+  - Diferenciar bolhas user/assistant, indicador “digitando...”.
+- Pricing: cards Free (3 sessões/mês) vs Pro (ilimitado, valor pendente), botão “Assinar Pro” chama /payment/subscribe.
+- About: substitui painel; explica propósito e diferenciais éticos/UX para o pitch.
+- PaymentMock: confirma assinatura mock e linka para o chat.
 
-## Paginas do frontend
-
-Landing.tsx
-- Split-screen: esquerda = headline emocional + CTA "Comecar Gratis", direita = preview do chat animado
-- Design escuro/roxo, fonte expressiva, sem layout generico
-
-Login.tsx
-- Split-screen: esquerda = branding Zynara, direita = botao "Entrar com Google"
-- Aviso obrigatorio: "Esta plataforma nao substitui acompanhamento psicologico profissional."
-
-Onboarding.tsx
-- Uma pergunta por vez (3 perguntas placeholder com chaves i18n)
-- Barra de progresso, botao "Pular"
-- Perguntas: "Como voce esta se sentindo ultimamente?", "O que te trouxe ate aqui?", "Ha algo especifico que gostaria de trabalhar?"
-
-Chat.tsx
-- Sidebar com lista de sessoes + botao "Nova sessao"
-- Area de mensagens com bolhas diferenciadas (usuario direita, Zynara esquerda com avatar)
-- Input com envio por Enter ou botao, indicador de "digitando..."
-
-Pricing.tsx
-- Dois cards: Gratuito (3 sessoes/mes) vs Pro (ilimitado, R$ VALOR_PENDENTE/mes)
-- Botao "Assinar Pro" chama POST /payment/subscribe
-
-Dashboard.tsx
-- Lista de sessoes anteriores com data e titulo
-- Plano atual do usuario
+Navegação: Home, Planos, Chat, Sobre (Painel removido).
 
 ## i18n
+Arquivos pt-BR.json, en-US.json, es.json devem conter:
+- nav.* incluindo nav.about
+- auth.*, onboarding.question1/2/3, onboarding.skip, onboarding.next
+- chat.placeholder, chat.newSession, chat.typing, chat.emptyState, chat.deleteSession*, chat.send
+- guest strings: chat.guestBanner, chat.guestRemaining, chat.guestLoginCta, chat.guestLimitReached
+- pricing.free, pricing.pro, pricing.subscribe (+ descrições)
+- common.loading, common.error
 
-Os 3 arquivos JSON devem conter as chaves:
-- nav.*, auth.*, onboarding.question1/2/3, onboarding.skip, onboarding.next, chat.placeholder, chat.newSession, pricing.free, pricing.pro, pricing.subscribe, common.loading, common.error
-
-## Variaveis de ambiente
-
+## Variáveis de ambiente
 frontend/.env.example:
-VITE_API_URL=http://localhost:3001
-VITE_GOOGLE_CLIENT_ID=SEU_CLIENT_ID
+- VITE_API_URL=http://localhost:3001
+- VITE_GOOGLE_CLIENT_ID=SEU_CLIENT_ID
 
 backend/.env.example:
-DATABASE_URL="file:./dev.db"
-GOOGLE_CLIENT_ID=SEU_CLIENT_ID
-GOOGLE_CLIENT_SECRET=SEU_CLIENT_SECRET
-JWT_SECRET=troque-em-producao
-GEMINI_API_KEY=SUA_CHAVE_GEMINI
-MP_ACCESS_TOKEN=SEU_TOKEN_MP
-PORT=3001
+- DATABASE_URL="file:./dev.db"
+- GOOGLE_CLIENT_ID=SEU_CLIENT_ID
+- GOOGLE_CLIENT_SECRET=SEU_CLIENT_SECRET
+- JWT_SECRET=troque-em-producao
+- GEMINI_API_KEY=SUA_CHAVE_GEMINI
+- MP_ACCESS_TOKEN=SEU_TOKEN_MP
+- PORT=3001
+- GUEST_MAX_USER_MESSAGES=50            # opcional, limite de mensagens de usuário por sessão visitante
+- GUEST_SESSION_TTL_MIN=120             # opcional, TTL em minutos para sessões visitantes
+
+## Testes/validação esperada
+- codex.md sem menções a Dashboard/Painel.
+- Páginas citadas existem no repo; navegação sem item Painel.
+- Limite visitante documentado (50 por padrão) condiz com o código e env.
+
+## Assumptions
+- Não alterar schema Prisma.
+- Limite visitante default 50; TTL default 120 min.
+- System prompt permanece igual; apenas contextualizado.

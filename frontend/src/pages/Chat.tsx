@@ -16,6 +16,8 @@ export function Chat() {
     activeSessionId,
     messagesBySession,
     lastReplySource,
+    guestRemaining,
+    guestLimit,
     isTyping,
     isLoading,
     error,
@@ -23,14 +25,17 @@ export function Chat() {
     openSession,
     createSession,
     deleteSession,
-    sendMessage
+    sendMessage,
+    ensureGuestSession
   } = useChat();
 
   useEffect(() => {
     if (token) {
       void loadSessions();
+    } else {
+      void ensureGuestSession();
     }
-  }, [loadSessions, token]);
+  }, [loadSessions, ensureGuestSession, token]);
 
   useEffect(() => {
     if (activeSessionId) {
@@ -39,6 +44,8 @@ export function Chat() {
   }, [activeSessionId, openSession]);
 
   const activeMessages = activeSessionId ? messagesBySession[activeSessionId] ?? [] : [];
+  const isGuest = !token;
+  const guestLimitReached = isGuest && guestRemaining <= 0;
 
   return (
     <AppShell>
@@ -52,20 +59,28 @@ export function Chat() {
         </div>
       </div>
 
+      {isGuest ? (
+        <div className="mb-4 rounded-2xl border border-amber-300/30 bg-amber-500/15 px-4 py-3 text-sm text-amber-50">
+          {t("chat.guestBanner", { limit: guestLimit })}
+        </div>
+      ) : null}
+
       {error ? (
         <div className="mb-4 rounded-2xl border border-rose-400/20 bg-rose-500/10 px-4 py-3 text-sm text-rose-100">
           {error}
         </div>
       ) : null}
 
-      <div className="grid gap-6 lg:grid-cols-[320px_1fr]">
-        <SessionList
-          sessions={sessions}
-          activeSessionId={activeSessionId}
-          onSelect={(sessionId) => void openSession(sessionId)}
-          onNewSession={() => void createSession()}
-          onDeleteSession={(sessionId) => void deleteSession(sessionId)}
-        />
+      <div className={`grid gap-6 ${isGuest ? "" : "lg:grid-cols-[320px_1fr]"}`}>
+        {isGuest ? null : (
+          <SessionList
+            sessions={sessions}
+            activeSessionId={activeSessionId}
+            onSelect={(sessionId) => void openSession(sessionId)}
+            onNewSession={() => void createSession()}
+            onDeleteSession={(sessionId) => void deleteSession(sessionId)}
+          />
+        )}
 
         <section className="flex flex-col">
           <div className="mb-3 flex items-center justify-between">
@@ -83,7 +98,19 @@ export function Chat() {
           </div>
 
           <MessageList messages={activeMessages} />
-          <Composer onSend={(content) => sendMessage(content)} disabled={isTyping} />
+          {isGuest ? (
+            <div className="mb-2 flex items-center justify-between text-xs text-white/50">
+              <span>{t("chat.guestRemaining", { remaining: guestRemaining, limit: guestLimit })}</span>
+              <button
+                type="button"
+                className="text-amber-200 underline decoration-dotted"
+                onClick={() => window.location.assign("/login")}
+              >
+                {t("chat.guestLoginCta")}
+              </button>
+            </div>
+          ) : null}
+          <Composer onSend={(content) => sendMessage(content)} disabled={isTyping || guestLimitReached} />
         </section>
       </div>
     </AppShell>

@@ -3,7 +3,7 @@
     "home": "Inicio",
     "pricing": "Planes",
     "chat": "Chat",
-    "dashboard": "Panel",
+    "about": "Sobre",
     "login": "Entrar",
     "logout": "Salir"
   },
@@ -51,7 +51,11 @@
     "emptyState": "Elige una sesión o crea una nueva para empezar.",
     "deleteSession": "Eliminar",
     "deleteSessionConfirm": "¿Seguro que quieres eliminar este historial? Esta acción no se puede deshacer.",
-    "deleteSessionAria": "Eliminar historial de {{title}}"
+    "deleteSessionAria": "Eliminar historial de {{title}}",
+    "guestBanner": "Modo visitante: hasta {{limit}} mensajes por conversación. Inicia sesión para historial guardado y sesiones ilimitadas.",
+    "guestRemaining": "{{remaining}} / {{limit}} mensajes restantes en modo visitante.",
+    "guestLoginCta": "Iniciar sesión",
+    "guestLimitReached": "Límite del modo visitante alcanzado. Crea una cuenta gratuita para continuar."
   },
   "pricing": {
     "free": "Gratis",

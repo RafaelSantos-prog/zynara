@@ -19,10 +19,10 @@ export function PaymentMock() {
           </div>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
-              to="/dashboard"
+              to="/chat"
               className="rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 px-5 py-3 text-sm font-semibold text-white shadow-glow"
             >
-              Ir para o painel
+              Ir para o chat
             </Link>
             <Link
               to="/chat"

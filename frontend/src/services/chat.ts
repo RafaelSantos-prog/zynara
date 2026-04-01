@@ -41,3 +41,26 @@ export async function sendChatMessage(sessionId: string, content: string) {
     body: JSON.stringify({ sessionId, content })
   });
 }
+
+export type GuestChatResponse = {
+  sessionId: string;
+  limit: number;
+  remaining: number;
+  reply: string;
+  replySource?: "gemini" | "fallback";
+  assistantMessage: ChatMessage;
+  messages: ChatMessage[];
+};
+
+export async function createGuestChatSession() {
+  return apiFetch<{ success: true; data: { sessionId: string; limit: number; remaining: number } }>("/chat/guest/session", {
+    method: "POST"
+  });
+}
+
+export async function sendGuestChatMessage(sessionId: string | null, content: string) {
+  return apiFetch<{ success: true; data: GuestChatResponse }>("/chat/guest/send", {
+    method: "POST",
+    body: JSON.stringify({ sessionId, content })
+  });
+}

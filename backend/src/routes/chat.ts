@@ -4,8 +4,75 @@ import { prisma } from "../lib/prisma.js";
 import { sendError, sendSuccess } from "../lib/http.js";
 import { authMiddleware, type AuthenticatedRequest } from "../middleware/authMiddleware.js";
 import { generateGeminiReply } from "../lib/gemini.js";
+import {
+  appendGuestMessage,
+  createGuestSession,
+  getGuestSession,
+  getRemainingGuestMessages,
+  GUEST_MESSAGE_LIMIT,
+  serializeGuestMessages
+} from "../lib/guestSessions.js";
 
 const router = Router();
+
+const guestSendSchema = z.object({
+  sessionId: z.string().optional(),
+  content: z.string().min(1).max(4000)
+});
+
+router.post("/guest/session", (_req, res) => {
+  const session = createGuestSession();
+  return sendSuccess(res, {
+    sessionId: session.id,
+    limit: GUEST_MESSAGE_LIMIT,
+    remaining: getRemainingGuestMessages(session)
+  }, 201);
+});
+
+router.post("/guest/send", async (req, res) => {
+  const parsed = guestSendSchema.safeParse(req.body);
+  if (!parsed.success) {
+    return sendError(res, "Invalid chat payload", 400, parsed.error.flatten());
+  }
+
+  const existingSession = parsed.data.sessionId ? getGuestSession(parsed.data.sessionId) : null;
+  const session = existingSession ?? createGuestSession();
+
+  if (getRemainingGuestMessages(session) <= 0) {
+    return sendError(
+      res,
+      "Limite de mensagens do modo visitante atingido. Crie uma conta gratuita para continuar.",
+      429,
+      { limit: GUEST_MESSAGE_LIMIT, remaining: 0, sessionId: session.id }
+    );
+  }
+
+  appendGuestMessage(session, { role: "user", content: parsed.data.content });
+
+  const reply = await generateGeminiReply({
+    userMessage: parsed.data.content,
+    recentHistory: session.messages.map((entry) => ({
+      role: entry.role,
+      content: entry.content
+    }))
+  });
+
+  const assistantMessage = appendGuestMessage(session, { role: "assistant", content: reply.reply });
+
+  return sendSuccess(res, {
+    sessionId: session.id,
+    limit: GUEST_MESSAGE_LIMIT,
+    remaining: getRemainingGuestMessages(session),
+    reply: reply.reply,
+    replySource: reply.source,
+    assistantMessage: {
+      ...assistantMessage,
+      sentAt: assistantMessage.sentAt.toISOString()
+    },
+    messages: serializeGuestMessages(session)
+  });
+});
+
 router.use(authMiddleware);
 
 router.post("/session", async (req: AuthenticatedRequest, res) => {
@@ -112,8 +179,8 @@ router.post("/send", async (req: AuthenticatedRequest, res) => {
 
   const reply = await generateGeminiReply({
     userMessage: parsed.data.content,
-    onboardingSummary: onboardingAnswers.map((item) => `${item.questionKey}: ${item.answer}`).join(" | "),
-    recentHistory: recentHistory.reverse().map((entry) => ({
+    onboardingSummary: onboardingAnswers.map((item: { questionKey: string; answer: string }) => `${item.questionKey}: ${item.answer}`).join(" | "),
+    recentHistory: recentHistory.reverse().map((entry: { role: string; content: string }) => ({
       role: entry.role as "user" | "assistant",
       content: entry.content
     })),

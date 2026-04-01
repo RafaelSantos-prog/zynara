@@ -7,7 +7,7 @@ const navLinks = [
   { to: "/", key: "home" },
   { to: "/pricing", key: "pricing" },
   { to: "/chat", key: "chat" },
-  { to: "/dashboard", key: "dashboard" }
+  { to: "/about", key: "about" }
 ];
 
 export function Header() {

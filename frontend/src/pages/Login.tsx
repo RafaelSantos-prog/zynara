@@ -14,14 +14,14 @@ export function Login() {
     event.preventDefault();
     const session = await signInWithEmail(email.trim(), password);
     if (session) {
-      navigate(session.onboardingComplete ? "/dashboard" : "/onboarding");
+      navigate(session.onboardingComplete ? "/chat" : "/onboarding");
     }
   };
 
   const handleGoogleLogin = async () => {
     const session = await signInWithGoogle();
     if (session) {
-      navigate(session.onboardingComplete ? "/dashboard" : "/onboarding");
+      navigate(session.onboardingComplete ? "/chat" : "/onboarding");
     }
   };
 

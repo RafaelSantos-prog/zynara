@@ -7,7 +7,7 @@ import { Register } from "@/pages/Register";
 import { Onboarding } from "@/pages/Onboarding";
 import { Chat } from "@/pages/Chat";
 import { Pricing } from "@/pages/Pricing";
-import { Dashboard } from "@/pages/Dashboard";
+import { About } from "@/pages/About";
 import { PaymentMock } from "@/pages/PaymentMock";
 import { useAuthStore } from "@/store/authStore";
 import type { ReactNode } from "react";
@@ -29,7 +29,7 @@ function PublicRoute({ children }: { children: ReactNode }) {
   }
 
   if (token) {
-    return <Navigate to="/dashboard" replace />;
+    return <Navigate to="/chat" replace />;
   }
   return children;
 }
@@ -62,12 +62,12 @@ export function App() {
         }
       />
       <Route path="/pricing" element={<AppShell><Pricing /></AppShell>} />
-      <Route element={<ProtectedRoute />}>
-        <Route path="/onboarding" element={<AppShell><Onboarding /></AppShell>} />
         <Route path="/chat" element={<Chat />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/payment/mock-checkout/:subscriptionId" element={<PaymentMock />} />
-      </Route>
+        <Route path="/about" element={<AppShell><About /></AppShell>} />
+        <Route element={<ProtectedRoute />}>
+          <Route path="/onboarding" element={<AppShell><Onboarding /></AppShell>} />
+          <Route path="/payment/mock-checkout/:subscriptionId" element={<PaymentMock />} />
+        </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

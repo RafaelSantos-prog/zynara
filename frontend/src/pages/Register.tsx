@@ -26,14 +26,14 @@ export function Register() {
     event.preventDefault();
     const session = await registerWithEmail(fullName.trim(), email.trim(), password);
     if (session) {
-      navigate(session.onboardingComplete ? "/dashboard" : "/onboarding");
+      navigate(session.onboardingComplete ? "/chat" : "/onboarding");
     }
   };
 
   const handleGoogleLogin = async () => {
     const session = await signInWithGoogle();
     if (session) {
-      navigate(session.onboardingComplete ? "/dashboard" : "/onboarding");
+      navigate(session.onboardingComplete ? "/chat" : "/onboarding");
     }
   };
 
