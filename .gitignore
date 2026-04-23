@@ -11,4 +11,10 @@ frontend/.env
 backend/.env
 backend/prisma/dev.db
 backend/prisma/dev.db-journal
-
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+voice-assistant/.venv/
+voice-assistant/.env
+voice-assistant/*.wav

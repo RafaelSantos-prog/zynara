@@ -7,10 +7,18 @@
     "backend"
   ],
   "scripts": {
+    "install:all": "make install-all",
     "dev:frontend": "npm run dev --workspace frontend",
     "dev:backend": "npm run dev --workspace backend",
+    "dev:all": "node scripts/dev-all.mjs",
+    "prisma:generate": "npm --prefix backend run prisma:generate",
+    "prisma:push": "npm --prefix backend run prisma:push",
+    "voice:run": "make voice-run",
+    "voice:once": "make voice-once",
+    "voice:devices": "make voice-devices",
+    "voice:test": "make voice-test",
+    "voice:tts-test": "make voice-tts-test",
     "build": "npm run build --workspace frontend && npm run build --workspace backend",
     "typecheck": "npm run typecheck --workspace frontend && npm run typecheck --workspace backend"
   }
 }
-
